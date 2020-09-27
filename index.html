@@ -106,6 +106,28 @@ http://download2262.mediafire.com/xz1p1ttr8wvg/wxs01dh19gxd1oy/Multi-128-kbps+%2
                 
   <div class="rich_media_content " id="js_content">
 <audio src="http://download1648.mediafire.com/gzjja9dnt7kg/xyej54rmqwukmvb/media.io_28425006df514b2aa1c3aaa481ea4274.mp3" preload="" autoplay="autoplay" loop="" class="audio" id="music-audio"></audio>
+<script>
+    function controlMusic() {
+      var audio = document.getElementById('music');
+      var i = document.getElementById('i');
+  //    if(audio !== null) {
+        if(audio.paused) {
+          audio.play();
+          i.style.webkitAnimationPlayState = "running";
+        }else{
+          audio.pause();
+          i.style.webkitAnimationPlayState = "paused";
+        }
+  //    }
+    }
+  </script> 	 
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 	  <script>
 	function audioAutoPlay(id){
 
