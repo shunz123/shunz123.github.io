@@ -107,16 +107,21 @@ http://download2262.mediafire.com/xz1p1ttr8wvg/wxs01dh19gxd1oy/Multi-128-kbps+%2
   <div class="rich_media_content " id="js_content">
 <audio src="http://download1648.mediafire.com/liiw2g15xqbg/xyej54rmqwukmvb/media.io_28425006df514b2aa1c3aaa481ea4274.mp3" id="music" autoplay loop></audio>
   <script>
-	var promise = document.querySelector('music').play();
-
-if (promise !== undefined) {
-  promise.then(_ => {
-    // Autoplay started!
-  }).catch(error => {
-    // Autoplay was prevented.
-    // Show a "Play" button so that user can start playback.
-  });
-}  
+	wx.config({
+   　　debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来
+   　　appId: data.configMap.appId, // 必填，公众号的唯一标识
+  　　 timestamp: data.configMap.timestamp, // 必填，生成签名的时间戳
+   　　nonceStr: data.configMap.nonceStr, // 必填，生成签名的随机串
+  　　 signature: data.configMap.signature,// 必填，签名，见附录1
+     　jsApiList: [
+         "onMenuShareTimeline",//分享朋友圈接口
+         "onMenuShareAppMessage"//分享给朋友接口
+     　] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+　　});
+　　wx.ready(function(){
+　　　　var audio = document.getElementById("music");
+　　　　audio.play()
+　　})
 	  
 	  
 	  
